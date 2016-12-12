@@ -47,9 +47,7 @@ project.ext {
     currentPluginName = 'GooglePlayGamesPlugin-0.9.35.unitypackage'
     resolverDir = new File('build/jarresolver').absolutePath
 
-    sampleList = ['CubicPilot', 'Minimal',
-         'QuizRacer',  'TicTacToe',
-         'NearbyDroids', 'SmokeTest', 'TrivialQuest']
+    sampleList = []
 
     gpg_sdk_link = 'https://developers.google.com/games/services/downloads/gpg-cpp-sdk.v2.1.zip'
 
@@ -390,7 +388,7 @@ check_ndk.ext.remoteTaskPhase = 'prebuild'
 task compile_gpg << {
     exec {
         workingDir "build/jni"
-        executable "${ndk_root}/ndk-build"
+        executable "${ndk_root}\\ndk-build.cmd"
     }
 }
 compile_gpg.description = "Compiles the GPG SDK libs into .so files"
